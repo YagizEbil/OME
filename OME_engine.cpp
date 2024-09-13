@@ -120,7 +120,7 @@ public:
         address.sin_addr.s_addr = INADDR_ANY;
         address.sin_port = htons(port);
 
-        if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) < 0) {
+        if (::bind(server_fd, (struct sockaddr*)&address, sizeof(address)) < 0) {
             cerr << "Bind failed." << endl;
             return;
         }
